@@ -4,7 +4,7 @@ import csv
 import os
 from sys import exit
 #
-from modules.Buzzer import Buzzer  # Assuming your Buzzer class is in a 'modules' folder
+from songs.Buzzer import Buzzer  # Assuming your Buzzer class is in a 'modules' folder
 
 class SongPlayer:
     def __init__(self, buzzer_pin, song_folder="songs"):
