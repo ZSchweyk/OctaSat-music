@@ -48,6 +48,7 @@ if __name__ == "__main__":
         player.play_song('tetris')  # Play the Tetris theme song
         player.play_song('scale')   # Play a simple scale
         player.play_song('simple_song')  # Play another sample song
+        player.play_song('twinkle')  # Play another sample song
 
     except KeyboardInterrupt:
         print("[!] Interrupted. Cleaning up...")
