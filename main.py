@@ -27,10 +27,13 @@ class SongPlayer:
             for row in song_reader:
                 if len(row) < 2:
                     continue  # Skip invalid rows
-                frequency = int(row[0])
-                duration = float(row[1])
-                self.buzzer.play_tone(frequency, duration)
-                sleep(0.05)  # Short pause between notes
+                try:
+                    frequency = int(row[0])
+                    duration = float(row[1])
+                    self.buzzer.play_tone(frequency, duration)
+                    sleep(0.05)  # Short pause between notes
+                except ValueError as e:
+                    print(f"[!] Error reading line: {row} - {e}")
 
     def cleanup(self):
         """Clean up the buzzer after playing the song."""
