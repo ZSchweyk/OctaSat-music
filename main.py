@@ -28,8 +28,8 @@ class SongPlayer:
                 if len(row) < 2:
                     continue  # Skip invalid rows
                 try:
-                    frequency = int(row[0])
-                    duration = float(row[1])
+                    frequency = float(row[0])  # Use float to handle decimal frequencies
+                    duration = float(row[1])   # Duration is also a float
                     self.buzzer.play_tone(frequency, duration)
                     sleep(0.05)  # Short pause between notes
                 except ValueError as e:
@@ -48,7 +48,7 @@ if __name__ == "__main__":
         player.play_song('tetris')  # Play the Tetris theme song
         player.play_song('scale')   # Play a simple scale
         player.play_song('simple_song')  # Play another sample song
-        player.play_song('twinkle')  # Play another sample song
+        player.play_song('twinkle')  # Play the new Twinkle song
 
     except KeyboardInterrupt:
         print("[!] Interrupted. Cleaning up...")
